@@ -61,6 +61,14 @@ var dubaiCons = new Cities('Dubai', '11', '38', '3.7');
 var parisCons = new Cities('Paris', '20', '38', '2.3');
 var limaCons = new Cities('Lima', '2', '16', '2.6');
 
+var cookieHours = document.getElementById('hours');
+for (var j = 0; j < hours.length; j++) {
+  var th = document.createElement('th');
+  th.textContent = `${hours[j]}`;
+  cookieHours.appendChild(th);
+
+}
+
 // exacutable code
 seattleCons.render();
 tokyoCons.render();

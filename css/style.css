@@ -6,3 +6,8 @@ td {
 h1 { 
   color: blue;
 }
+th {
+  border: 1px solid black;
+  padding: 20px;
+  
+}
