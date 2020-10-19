@@ -61,13 +61,19 @@ var dubaiCons = new Cities('Dubai', '11', '38', '3.7');
 var parisCons = new Cities('Paris', '20', '38', '2.3');
 var limaCons = new Cities('Lima', '2', '16', '2.6');
 
-var cookieHours = document.getElementById('hours');
+
+var cookieHours = document.getElementById('cookie-table');
+var th1 = document.createElement('th');
+cookieHours.appendChild(th1);
 for (var j = 0; j < hours.length; j++) {
   var th = document.createElement('th');
   th.textContent = `${hours[j]}`;
   cookieHours.appendChild(th);
 
 }
+var total =document.createElement('th');
+total.textContent = 'Total';
+cookieHours.appendChild(total);
 
 // exacutable code
 seattleCons.render();
