@@ -1,23 +1,36 @@
-td {
-  border: 5px solid darkblue;
-  padding: 15px;
-  font-family: initial;
-  font-size: 20px;
-}
-
 header { 
-  color: blue;
-  font-size: 25px;
+  background-color: lightgreen ;
+  color: black;
   text-align: center;
-
+  font-family: 'Josefin Sans', sans-serif; /*google font*/
+  font-size: 50px;
 }
+
+td {
+background-color: lightgoldenrodyellow;
+  border: 5px solid black;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
 
 
 
 th {
+  background-color: deepskyblue;
   border: 5px solid black;
   padding: 10px;
-  font-family: cursive;
-  font-size: 20px;
-   
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 28px;
+}
+
+a:hover {
+    background-color:limegreen;
+  
+  };
+
+
+body {
+  background-color: lightgray;
 }

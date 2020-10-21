@@ -71,9 +71,13 @@ for (var j = 0; j < hours.length; j++) {
   cookieHours.appendChild(th);
 
 }
-var total =document.createElement('th');
+var total = document.createElement('th');
 total.textContent = 'Total';
 cookieHours.appendChild(total);
+
+
+
+
 
 // exacutable code
 seattleCons.render();
