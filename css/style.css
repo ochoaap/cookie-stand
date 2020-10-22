@@ -34,3 +34,8 @@ a:hover {
 body {
   background-color: lightgray;
 }
+
+table {
+  margin: auto;
+  text-align: center;
+}

@@ -75,8 +75,16 @@ var total = document.createElement('th');
 total.textContent = 'Total';
 cookieHours.appendChild(total);
 
+// var grandTotalArray = {
+//   hours
+//   cookieHours
+// }
 
+// for (var i = 0; i < hours.length; i++){
+//   for (var j = 0; j < getCookies[i].length; i++){
 
+//   }
+// }
 
 
 // exacutable code
