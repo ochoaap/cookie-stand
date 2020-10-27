@@ -1,4 +1,5 @@
 'use strict';
+
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 var seattle = {
@@ -16,14 +17,22 @@ var seattle = {
   },
 
   getCookies: function () {
+    this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
       this.totalPerDay += Math.floor(this.customerPerHour[i] * this.avgCookies);
     }
   },
+  render: function () {
+    this.getCookies();
+    var parentElement = document.getElementById('seattle');
+    for (var i = 0; i < hours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${hours[i]}; ${this.cookiesPerHour[i]} cookies`;
+      parentElement.appendChild(li);
+    }
+  }
 };
-seattle.getCust();
-seattle.getCookies();
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
@@ -31,20 +40,6 @@ function getcustvalue(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
   //The maximum is inclusive and the minimum is inclusive
-}
-console.log(seattle);
-
-
-var parentElement = document.getElementById('seattle');
-
-var list = document.createElement('ul');
-parentElement.appendChild(list);
-
-
-for (var i = 0; i < hours.length; i++) {
-  var li = document.createElement('li');
-  li.textContent = `${hours[i]}; ${seattle.cookiesPerHour[i]} cookies`;
-  list.appendChild(li);
 }
 
 // Tokyo
@@ -64,14 +59,22 @@ var tokyo = {
   },
 
   getCookies: function () {
+    this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
       this.totalPerDay += Math.floor(this.customerPerHour[i] * this.avgCookies);
     }
   },
+  render: function () {
+    this.getCookies();
+    var tParentElement = document.getElementById('tokyo');
+    for (var i = 0; i < hours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${hours[i]}; ${this.cookiesPerHour[i]} cookies`;
+      tParentElement.appendChild(li);
+    }
+  }
 };
-tokyo.getCust();
-tokyo.getCookies();
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
@@ -80,22 +83,11 @@ function getcustvalue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
   //The maximum is inclusive and the minimum is inclusive
 }
-console.log(tokyo);
 
 
-var parentElement = document.getElementById('tokyo');
-
-var list = document.createElement('ul');
-parentElement.appendChild(list);
 
 
-for (var i = 0; i < hours.length; i++) {
-  var li = document.createElement('li');
-  li.textContent = `${hours[i]}; ${seattle.cookiesPerHour[i]} cookies`;
-  list.appendChild(li);
-}
-
-// Dubai
+// dubai
 
 var dubai = {
   name: 'dubai',
@@ -112,14 +104,22 @@ var dubai = {
   },
 
   getCookies: function () {
+    this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
       this.totalPerDay += Math.floor(this.customerPerHour[i] * this.avgCookies);
     }
   },
+  render: function () {
+    this.getCookies();
+    var dParentElement = document.getElementById('dubai');
+    for (var i = 0; i < hours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${hours[i]}; ${this.cookiesPerHour[i]} cookies`;
+      dParentElement.appendChild(li);
+    }
+  }
 };
-dubai.getCust();
-dubai.getCookies();
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
@@ -128,29 +128,16 @@ function getcustvalue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
   //The maximum is inclusive and the minimum is inclusive
 }
-console.log(dubai);
 
-
-var parentElement = document.getElementById('dubai');
-
-var list = document.createElement('ul');
-parentElement.appendChild(list);
-
-
-for (var i = 0; i < hours.length; i++) {
-  var li = document.createElement('li');
-  li.textContent = `${hours[i]}; ${seattle.cookiesPerHour[i]} cookies`;
-  list.appendChild(li);
-}
 
 
 // Paris
 
 var paris = {
   name: 'paris',
-  min: 3,
-  max: 24,
-  avgCookies: 1.2,
+  min: 20,
+  max: 38,
+  avgCookies: 2.3,
   customerPerHour: [],
   cookiesPerHour: [],
   totalPerDay: 0,
@@ -161,14 +148,22 @@ var paris = {
   },
 
   getCookies: function () {
+    this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
       this.totalPerDay += Math.floor(this.customerPerHour[i] * this.avgCookies);
     }
   },
+  render: function () {
+    this.getCookies();
+    var pParentElement = document.getElementById('paris');
+    for (var i = 0; i < hours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${hours[i]}; ${this.cookiesPerHour[i]} cookies`;
+      pParentElement.appendChild(li);
+    }
+  }
 };
-paris.getCust();
-paris.getCookies();
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
@@ -177,27 +172,16 @@ function getcustvalue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
   //The maximum is inclusive and the minimum is inclusive
 }
-console.log(paris);
 
 
-var parentElement = document.getElementById('paris');
-
-var list = document.createElement('ul');
-parentElement.appendChild(list);
 
 
-for (var i = 0; i < hours.length; i++) {
-  var li = document.createElement('li');
-  li.textContent = `${hours[i]}; ${seattle.cookiesPerHour[i]} cookies`;
-  list.appendChild(li);
-}
-
-// lima
+// Lima
 
 var lima = {
   name: 'lima',
   min: 2,
-  max: 16,
+  max: 14,
   avgCookies: 4.6,
   customerPerHour: [],
   cookiesPerHour: [],
@@ -209,14 +193,22 @@ var lima = {
   },
 
   getCookies: function () {
+    this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
       this.totalPerDay += Math.floor(this.customerPerHour[i] * this.avgCookies);
     }
   },
+  render: function () {
+    this.getCookies();
+    var lParentElement = document.getElementById('lima');
+    for (var i = 0; i < hours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${hours[i]}; ${this.cookiesPerHour[i]} cookies`;
+      lParentElement.appendChild(li);
+    }
+  }
 };
-lima.getCust();
-lima.getCookies();
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
@@ -225,17 +217,9 @@ function getcustvalue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
   //The maximum is inclusive and the minimum is inclusive
 }
-//console.log(tokyo);
 
-
-var parentElement = document.getElementById('lima');
-
-var list = document.createElement('ul');
-parentElement.appendChild(list);
-
-
-for (var i = 0; i < hours.length; i++) {
-  var li = document.createElement('li');
-  li.textContent = `${hours[i]}; ${seattle.cookiesPerHour[i]} cookies`;
-  list.appendChild(li);
-}
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
