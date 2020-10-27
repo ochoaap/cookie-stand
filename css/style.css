@@ -1,0 +1,120 @@
+header h1 {
+  font-size: 80px;
+  margin-right: 300px;
+}
+
+header { 
+  background-color: lightgreen ;
+  color: black;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif; /*google font*/
+  font-size: 40px;
+  height: 250px;
+  border: solid lightsalmon;
+}
+header a {
+  clear: right;
+  margin-right: -250px;
+}
+header li {
+  text-align: justify;
+  
+}
+
+header img {
+  float: right;
+  display: absolute;
+}
+
+#hero {
+  margin-left: 25%;
+}
+
+main p{
+  height: 330px;
+  float: right;
+  width: 40%;
+  font-size: 33px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+p {
+  float: right;
+}
+
+main ul {
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+main li {
+  margin: auto;
+}
+
+main li img {
+  display: inline-block;
+  /* float: left;   */
+}
+
+
+
+
+
+
+
+td {
+background-color: lightblue;
+  border: 5px solid black;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+
+
+
+th {
+  background-color: deepskyblue;
+  border: 5px solid black;
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 28px;
+}
+
+a:hover {
+    background-color:limegreen;
+  
+  }
+
+
+main {
+  background-color: lightgoldenrodyellow;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+
+fieldset {
+  background-color: lightblue;
+  border: 5px solid black;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+fieldset legend {
+  text-align: center;
+}
+footer{
+  background-color: lightgreen;
+  text-align: left;
+  border: solid lightsalmon
+}
+footer img {
+  display: inline-block;
+  margin-left: 35%;
+  background-color: lightgreen;
+}
