@@ -1,11 +1,12 @@
 'use strict';
-
+var unused = [];
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var cookieTable = document.getElementById('cookie-table');
 var grandTotalArray = [];
 var totalOfTotals = 0;
 var getStoresArray = [];
 var cookieHours = document.getElementById('cookie-table');
+
 
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
