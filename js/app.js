@@ -6,7 +6,6 @@ var totalOfTotals = 0;
 var getStoresArray = [];
 var cookieHours = document.getElementById('cookie-table');
 var myForm = document.getElementById('cookiestore');
-
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
   min = Math.ceil(min);
@@ -93,11 +92,8 @@ function getTotals() {
     totalOfTotals += hourlyTotal;
   }
 }
-
-
 function handleSubmit(event) {
   event.preventDefault();
-
   var storeName = event.target.cookiestorename.value;
   console.log(storeName);
   var maxCust = event.target.maxCust.value;
@@ -106,19 +102,13 @@ function handleSubmit(event) {
   console.log(minCust);
   var perHour = event.target.perHour.value;
   console.log(perHour);
-
   new Cities(storeName, minCust, maxCust, perHour);
   //clear old table before rendering new one
   var table = document.getElementById('cookie-table');
   table.innerHTML = '';
   renderTable();
 }
-
-
 myForm.addEventListener('submit', handleSubmit);
-
-
-
 // exacutable code
 function renderTable() {
   renderHeader();
@@ -133,6 +123,4 @@ function renderTable() {
   getTotals();
   renderFooter();
 }
-
 renderTable();
-
