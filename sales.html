@@ -18,16 +18,16 @@
       <fieldset>
         <legend>Enter New Store Information</legend>
         <label for='cookiestorename'> Store Name</label>
-        <input type="text" name='cookiestorename'>
+        <input type="text" name='cookiestorename'required>
 
         <label for='maxCust'> Max Customers</label>
-        <input type="number" name='maxCust'>
+        <input type="number" name='maxCust'required min="0">
 
         <label for='minCust'> Min Customers</label>
-        <input type="number" name='minCust'>
+        <input type="number" name='minCust'required min="0">
 
         <label for='perHour'> Cookies Sold Per Hour</label>
-        <input type="number" name='perHour'>
+        <input type="number" name='perHour' required min="0">
 
 
         <button type='submit' name='submit'>submit</button>
