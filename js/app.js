@@ -1,11 +1,12 @@
 'use strict';
-var unused = [];
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var cookieTable = document.getElementById('cookie-table');
 var grandTotalArray = [];
 var totalOfTotals = 0;
 var getStoresArray = [];
 var cookieHours = document.getElementById('cookie-table');
+var myForm = document.getElementById('cookiestore');
+
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
   min = Math.ceil(min);
@@ -52,11 +53,11 @@ function Cities(name, min, max, avgCookies) {
     cookieTable.appendChild(tr);
   };
 }
-var seattleCons = new Cities('Seattle', '23', '65', '6.3');
-var tokyoCons = new Cities('Tokyo', '3', '24', '1.2');
-var dubaiCons = new Cities('Dubai', '11', '38', '3.7');
-var parisCons = new Cities('Paris', '20', '38', '2.3');
-var limaCons = new Cities('Lima', '2', '16', '2.6');
+new Cities('Seattle', '23', '65', '6.3');
+new Cities('Tokyo', '3', '24', '1.2');
+new Cities('Dubai', '11', '38', '3.7');
+new Cities('Paris', '20', '38', '2.3');
+new Cities('Lima', '2', '16', '2.6');
 function renderHeader() {
   var th1 = document.createElement('th');
   cookieHours.appendChild(th1);
@@ -71,7 +72,7 @@ function renderHeader() {
 }
 function renderFooter() {
   var th1 = document.createElement('th');
-  th1.textContent= 'Totals';
+  th1.textContent = 'Totals';
   cookieHours.appendChild(th1);
   for (var j = 0; j < hours.length; j++) {
     var th = document.createElement('th');
@@ -92,12 +93,46 @@ function getTotals() {
     totalOfTotals += hourlyTotal;
   }
 }
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  var storeName = event.target.cookiestorename.value;
+  console.log(storeName);
+  var maxCust = event.target.maxCust.value;
+  console.log(maxCust);
+  var minCust = event.target.minCust.value;
+  console.log(minCust);
+  var perHour = event.target.perHour.value;
+  console.log(perHour);
+
+  new Cities(storeName, minCust, maxCust, perHour);
+  //clear old table before rendering new one
+  var table = document.getElementById('cookie-table');
+  table.innerHTML = '';
+  renderTable();
+}
+
+
+myForm.addEventListener('submit', handleSubmit);
+
+
+
 // exacutable code
-renderHeader();
-seattleCons.render();
-tokyoCons.render();
-dubaiCons.render();
-parisCons.render();
-limaCons.render();
-getTotals();
-renderFooter();
+function renderTable() {
+  renderHeader();
+  for (var i = 0; i < getStoresArray.length; i++) {
+    getStoresArray[i].render();
+  }
+  // seattleCons.render();
+  // tokyoCons.render();
+  // dubaiCons.render();
+  // parisCons.render();
+  // limaCons.render();
+  getTotals();
+  renderFooter();
+}
+
+renderTable();
+
