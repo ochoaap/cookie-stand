@@ -2,7 +2,6 @@ header h1 {
   font-size: 80px;
   margin-right: 300px;
 }
-
 header { 
   background-color: lightgreen ;
   color: black;
@@ -12,24 +11,24 @@ header {
   height: 250px;
   border: solid lightsalmon;
 }
+h1{
+  font-family: 'Zilla Slab Highlight', cursive;
+  font-size: 35px;
+}
 header a {
   clear: right;
   margin-right: -250px;
 }
 header li {
   text-align: justify;
-  
 }
-
 header img {
   float: right;
   display: absolute;
 }
-
 #hero {
   margin-left: 25%;
 }
-
 main p{
   height: 330px;
   float: right;
@@ -37,11 +36,9 @@ main p{
   font-size: 33px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
 }
-
 p {
   float: right;
 }
-
 main ul {
   height: 400px;
   display: flex;
@@ -50,18 +47,10 @@ main ul {
 main li {
   margin: auto;
 }
-
 main li img {
   display: inline-block;
   /* float: left;   */
 }
-
-
-
-
-
-
-
 td {
 background-color: lightblue;
   border: 5px solid black;
@@ -69,10 +58,6 @@ background-color: lightblue;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
-
-
-
-
 th {
   background-color: deepskyblue;
   border: 5px solid black;
@@ -80,23 +65,16 @@ th {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 28px;
 }
-
 a:hover {
     background-color:limegreen;
-  
   }
-
-
 main {
   background-color: lightgoldenrodyellow;
 }
-
 table {
   margin: auto;
   text-align: center;
 }
-
-
 fieldset {
   background-color: lightblue;
   border: 5px solid black;
@@ -104,9 +82,9 @@ fieldset {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
-
 fieldset legend {
   text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 footer{
   background-color: lightgreen;

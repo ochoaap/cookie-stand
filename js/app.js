@@ -6,7 +6,6 @@ var totalOfTotals = 0;
 var getStoresArray = [];
 var cookieHours = document.getElementById('cookie-table');
 var myForm = document.getElementById('cookiestore');
-
 // received this function from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getcustvalue(min, max) {
   min = Math.ceil(min);
@@ -30,6 +29,7 @@ function Cities(name, min, max, avgCookies) {
     }
   };
   this.getCookies = function () {
+    this.totalPerDay = 0;
     this.getCust();
     for (var i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.customerPerHour[i] * this.avgCookies));
@@ -84,6 +84,8 @@ function renderFooter() {
   cookieHours.appendChild(total);
 }
 function getTotals() {
+  grandTotalArray = [];
+  totalOfTotals = 0;
   for (var i = 0; i < hours.length; i++) {
     var hourlyTotal = 0;
     for (var j = 0; j < getStoresArray.length; j++) {
@@ -93,46 +95,24 @@ function getTotals() {
     totalOfTotals += hourlyTotal;
   }
 }
-
-
 function handleSubmit(event) {
   event.preventDefault();
-
   var storeName = event.target.cookiestorename.value;
-  console.log(storeName);
   var maxCust = event.target.maxCust.value;
-  console.log(maxCust);
   var minCust = event.target.minCust.value;
-  console.log(minCust);
   var perHour = event.target.perHour.value;
-  console.log(perHour);
-
   new Cities(storeName, minCust, maxCust, perHour);
-  //clear old table before rendering new one
   var table = document.getElementById('cookie-table');
   table.innerHTML = '';
   renderTable();
 }
-
-
 myForm.addEventListener('submit', handleSubmit);
-
-
-
-// exacutable code
 function renderTable() {
   renderHeader();
   for (var i = 0; i < getStoresArray.length; i++) {
     getStoresArray[i].render();
   }
-  // seattleCons.render();
-  // tokyoCons.render();
-  // dubaiCons.render();
-  // parisCons.render();
-  // limaCons.render();
   getTotals();
   renderFooter();
 }
-
 renderTable();
-
