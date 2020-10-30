@@ -12,6 +12,11 @@ header {
   height: 250px;
   border: solid lightsalmon;
 }
+h1{
+  font-family: 'Zilla Slab Highlight', cursive;
+  font-size: 35px;
+}
+
 header a {
   clear: right;
   margin-right: -250px;
